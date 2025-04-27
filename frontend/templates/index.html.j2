@@ -9,34 +9,30 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
+            /* Dark mode */
             background-color: #1a202c;
-            /* Dark background */
             color: #f7fafc;
-            /* Light text color */
         }
 
         .ui-box {
-            /* Darker box background */
+            /* Lighter dark gray box */
             border: 1px solid #2d3748;
             border-radius: 0.5rem;
             padding: 2rem;
             max-width: 50%;
-            min-height: 50vh;
             margin: auto;
         }
     </style>
 </head>
 
 <body class="px-auto min-h-screen pt-20">
-    <div class="ui-box h-80">
-        <h1 class="text-4xl font-bold">Invert a PDF file</h1>
-        <p class="mt-4 text-lg">Drop a PDF file into the uploader below.</p>
-        <form class="py-4 h-64 w-full" action="http://localhost:8000/invert" method="post"
+    <div class="ui-box h-auto w-full mx-auto">
+        <h1 class="text-4xl font-bold">PDF Color Inverter</h1>
+        <form class="py-4 h-auto w-full" action="http://localhost:8000/invert" method="post"
             enctype="multipart/form-data">
-            <input type="file" name="file" accept=".pdf" class="mt-4 p-2 w-full h-full border border-gray-600 rounded">
-            <button type="submit" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Invert PDF
-            </button>
+            {{ form.file.label(class="text-lg") }}
+            {{ form.file(class="mt-4 p-2 w-full h-auto border border-gray-600 rounded") }}
+            {{ form.submit(class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded") }}
         </form>
     </div>
 
