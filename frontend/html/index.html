@@ -8,13 +8,13 @@
     <style>
         body {
             /* Dark mode */
-            background-color: #1a202c;
-            color: #f7fafc;
+            background-color: #1F2937;
+            color: #F3F4F6;
         }
 
         .ui-box {
             /* Lighter dark gray box */
-            border: 1px solid #93969c;
+            border: 1px solid #E5E7EB;
             border-radius: 0.5rem;
             padding: 2rem;
             max-width: 50%;
@@ -23,19 +23,19 @@
         }
 
         .ui-box-yellow {
-            border-color: #f6e05e;
+            border-color: #FCD34D;
         }
 
         .ui-box-yellow p {
-            color: #f6e05e;
+            color: #FCD34D;
         }
 
         .ui-box-blue {
-            border-color: #63b3ed;
+            border-color: #60A5FA;
         }
 
         .ui-box-blue p {
-            color: #63b3ed;
+            color: #60A5FA;
         }
     </style>
 </head>
@@ -46,7 +46,7 @@
         <form id="pdf-form" class="py-4 h-auto w-full" onsubmit="event.preventDefault(); submitForm();"
             enctype="multipart/form-data">
             <label class="text-lg" for="file">PDF File</label>
-            <input accept="*.pdf" class="mt-4 p-2 w-full h-auto border border-gray-600 rounded" id="file" name="file"
+            <input accept="*.pdf" class="mt-4 p-2 w-full h-auto border border-gray-200 rounded" id="file" name="file"
                 required="true" type="file">
             <input class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="submit"
                 name="submit" type="submit" value="Invert PDF">
