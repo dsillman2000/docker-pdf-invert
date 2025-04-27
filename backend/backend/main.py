@@ -51,12 +51,17 @@ def gs_invert(input_path: Path) -> Path:
     return output_path
 
 
-"""FastAPI endpoint, /invert, which takes PDF data and downloads it to local disk."""
-
-
 @app.post("/invert")
 async def invert(request: Request) -> FileResponse:
-    """FastAPI endpoint, /invert, which takes PDF data and downloads it to local disk."""
+    """FastAPI endpoint, /invert, which takes PDF data and downloads it to local disk, using
+    Ghostscript to invert the colors of the PDF file. It then returns the inverted PDF file.
+    
+    Args:
+        request (Request): The incoming request containing the PDF file.
+        
+    Returns:
+        FileResponse: The inverted PDF file.
+    """
     data = await request.form()
     if "file" not in data:
         raise ValueError("No file found in the request.")
